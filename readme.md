@@ -86,28 +86,36 @@ Aşağıda tablolar ve şemaları verilmiş.
 
    1- öğrenci tablosuna 'sehir' alanı ekleyiniz.
 
+   Alter table ogrenci add sehir varchar(20)
 
    2- tablolarda veri olarak tarih geçen alanlarda veri tipini string yerine DateTime olarak ayarlayınız.
 
 
    3- öğrenci tablosuna 'dogum_yeri' alanı ekleyiniz ve default değerini 'Türkiye' yapınız.
 
+   Alter Table ogrenci Add  dogum_yeri varchar(20) NOT NULL DEFAULT 'Turkiye' 
 
    4- öğrenci tablosundan 'puan' alanını siliniz.
 
+   Alter Table ogrenci Drop Column puan
 
    5- öğrenciler tablosundaki kiz öğrencileri alarak kiz_ogrenciler tablosu oluşturunuz.
    
    
    6- kiz_ogrenciler tablosunu siliniz.
 
+     Drop Table kiz_ogrenciler
 
    7- kiz_yurdu tablosu oluşturunuz(sadece 'ad' alanı olsun). 1 kayıt ekleyiniz.
       öğrenci tablosundaki kız öğrencileri kullanarak kiz_yurdunda_kalanlar tablosu oluşturunuz
 
+Create Table kiz_yurdu (ad varchar(20) NOT NULL)
+??
 
    8- kiz_ogrenciler tablosunun adını kogrenciler olarak değiştiriniz
 
+      alter table kiz_ogrenciler RENAME kogrenciler
+      (internette sql server managment'te bu şekilde görünüyor ama çalıştıramadım)
 
    9- yazar tablosundaki 'ad' alanının adını 'name' olarak güncelleyiniz.
 
@@ -116,4 +124,21 @@ Aşağıda tablolar ve şemaları verilmiş.
 
 
    11- tablo ilişkilerine 5'er tane örnek veriniz (1-1, 1-n, n-n)  
+
+   (1-1)
+   telno-kişi
+   tc.no-kişi
+   cipNo-evcilHayvan
+   KullanıcıAdi-Kişi(bir platformda)
+   SiparisNo-Kisi
+
+   (n-n)
+
+   öğrenci-öğretmen
+   öğrenci-sınıf
+   doktor-hasta
+
+   (1-n)
+   bankaSıraNo-Bankacı
+   anne-cocuk
 
